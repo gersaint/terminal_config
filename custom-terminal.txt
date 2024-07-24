@@ -1,0 +1,235 @@
+- descargar windows terminal
+- descargar windows powershell
+
+- Debe aparecer la opcion de powershell (icono negro )al dar click en windows terminal 
+	( aqui creo que hice algo en el json settings de la terminal de windows)
+	
+- Open Settinga
+	- Startup:
+	Default profile 				--> Powershell (NO Windows Poewrshell)
+	Default terminal application	--> Windows Terminal
+	
+	Damos click en SAVE
+	
+- Cambiar colores a la terminal:
+
+	- Open JSON Files:
+	- pegar el siguiente codigo abajo de los demas temas 
+		snazzy:
+			
+			{
+				"name": "Snazzy",
+				"foreground": "#eff0eb",
+				"background": "#282a36",
+				"selectionBackground": "#3e404a",
+				"cursorColor": "#97979b",
+				"black": "#282a36",
+				"red": "#ff5c57",
+				"green": "#5af78e",
+				"yellow": "#f3f99d",
+				"blue": "#57c7ff",
+				"purple": "#ff6ac1",
+				"cyan": "#9aedfe",
+				"white": "#f1f1f0",
+				"brightBlack": "#686868",
+				"brightRed": "#ff5c57",
+				"brightGreen": "#5af78e",
+				"brightYellow": "#f3f99d",
+				"brightBlue": "#57c7ff",
+				"brightPurple": "#ff6ac1",
+				"brightCyan": "#9aedfe",
+				"brightWhite": "#eff0eb"
+			}
+			
+	- Ctrl + S
+	
+	- ir a color schemes y seleccionar el nuevo tema: snazzy
+	
+	- damos click en set as default 
+	
+	- vamos a Settings --> Appareance
+		CLICK EN --> Use acrylic material in the tab row | ON
+		
+	- iNSTALAR Promp Theme:
+	
+		chrome --> Oh My Posh
+		
+		intalar win get desde app store
+		
+		teclear en la terminal win get:
+			winget install JanDeDobbeleer.OhMyPosh -s winget
+			
+			este se encuentra en ohmypush --> docs --> installation --> windows
+			
+		teclear en la terminal:
+		
+			oh-my-posh font install 
+			
+			seleccionar: FiraCode
+		
+		reiniciamos la terminal 
+		
+		ir a settings --> Profiles --> Defaults 
+			Additional Settings --> Appareance --> Font Face --> FiraCode Nerd Font Mono
+			
+			SAVE
+			
+		- activar ohmypush:
+			
+			escribimos en la terminal:
+				oh-my-posh 
+				
+			Si muestra cosas es que se instalo correctamente
+			
+			pegamos en la terminal lo siguiente:
+				
+				oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" | Invoke-Expression
+			
+			copiamos el comando que no es envie:
+			
+				(@(& 'C:/Users/gersaint.cruz/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\gersaint.cruz\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' --print) -join "`n") | Invoke-Expression
+				
+			pegamos 
+			
+		- teclemaos en la terminal: 
+			
+			Get-PoshThemes 
+			
+			mostrar ejemplos de themes de como se mostraria nuestra terminal 
+			
+		- ejemplo de nombre de theme: devious-diamonds	
+		
+		- subimos con el boton arriba para que nos mueste el comando que pegamos:
+			(@(%
+			
+			(@(& 'C:/Users/gersaint.cruz/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\gersaint.cruz\AppData\Local\Programs\oh-my-posh\themes\blueish.omp.json' --print) -join "`n") | Invoke-Expression
+			
+			en este comando tenemos que reemplar: 
+			
+			jandedobbeleer.omp.json
+			por el nuevo tema
+			devious-diamonds.omp.json
+			
+			copiamos el comando completo y lo pegamos y damos enter
+			
+		- twcleamos en la terminal:
+		
+			notepad $PROFILE 
+			Presiona [ENTER]
+			
+			Si arroja un mensaje de error ejecutamos el siguiente comando:
+			
+				New-Item -Path $PROFILE -Type File -Force 
+				Presiona [ENTER]
+				
+				Nos va a devolver lo sig:
+				
+				Mode                 LastWriteTime         Length Name
+				----                 -------------         ------ ----
+				-a---       24/07/2024 02:42 p. m.              0 Microsoft.PowerShell_profile.ps1
+				
+			
+			Ejecutamos de nuevo: 
+			
+			notepad $PROFILE 
+			Presiona[ENTER]
+			
+			Nos abrira el notepad y escribimos:
+			
+				 (@(& 'C:/Users/gersaint.cruz/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\gersaint.cruz\AppData\Local\Programs\oh-my-posh\themes\blueish.omp.json' --print) -join "`n") | Invoke-Expression
+			
+			Guardamos
+			
+		- agregar los iconos:
+			
+			tecleamos en la terminal:
+				
+			Install-Module -Name Terminal-Icons -Repository PSGallery 
+			
+			damos yes
+			
+			tecleamos en la terminal:
+			
+			Import-Module Terminal-Icons 
+		
+		- teclemaos en la terminal:
+		
+			notepad $PROFILE 
+			
+			- agregamos al archivo de texto:
+			
+			Import-Module Terminal-Icons 
+			
+	- agregar modulo de texto predictivo:
+		
+		tecleamos en la terminal:
+		
+		Set-PSReadLineOption -PredictionViewStyle ListView 
+		
+	- teclemaos en la terminal:
+		
+			notepad $PROFILE 
+			
+			- agregamos al archivo de texto:
+			
+			Set-PSReadLineOption -PredictionViewStyle ListView 
+			
+		SAVE
+			
+			
+		https://github.com/gersaint/terminal_config.git
+		git push -u origin master
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+			
+			
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
